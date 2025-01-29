@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOP Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeToggleBtn">
+            <span class="light-icon">🌞</span>
+            <span class="dark-icon">🌙</span>
+        </button>
+    </div>
+    
+    <div class="container">
+        <h1>SOP Generator</h1>
+        
+        <div class="api-section" id="apiSection">
+            <form id="apiForm">
+                <div class="form-group">
+                    <label for="apiKey">OpenRouter API Key:</label>
+                    <div class="api-input-group">
+                        <input type="password" id="apiKey" required placeholder="Enter your OpenRouter API key">
+                        <button type="submit" id="saveApiBtn">Save API Key</button>
+                        <button type="button" id="resetApiBtn">Reset API Key</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="input-section">
+            <form id="sopForm">
+                <div class="form-group">
+                    <label for="taskInput">Describe your task or objective:</label>
+                    <textarea id="taskInput" required placeholder="e.g., Create a budget report for Q1"></textarea>
+                </div>
+                <button type="submit" id="generateBtn">Generate SOP</button>
+            </form>
+        </div>
+
+        <div class="output-section" id="outputSection" style="display: none;">
+            <div class="sop-content" id="sopContent"></div>
+            <div class="action-buttons">
+                <button id="copyBtn">Copy to Clipboard</button>
+                <button id="printBtn">Print</button>
+                <div class="share-buttons">
+                    <button class="share-btn facebook" title="Share on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+                    <button class="share-btn twitter" title="Share on X">
+                        <i class="fab fa-x-twitter"></i>
+                    </button>
+                    <button class="share-btn whatsapp" title="Share on WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </button>
+                    <button class="share-btn telegram" title="Share on Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="loadingSpinner" class="loading" style="display: none;">
+            <p id="loadingText" class="loading-text">Brewing the perfect SOP... ☕</p>
+            <div class="progress-container">
+                <div id="loadingProgress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p id="timeIndicator" class="time-indicator">
+                <span id="elapsedTime">0:00</span>
+                <span class="time-separator"> | Est. remaining: </span>
+                <span id="remainingTime">~30 sec</span>
+            </p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 <a href="https://hanafihassan.com" target="_blank">hanafihassan.com</a>. All rights reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
